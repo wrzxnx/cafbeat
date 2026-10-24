@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CafBeat · Coffee Log & Caffeine Tracker</title>
+<meta name="description" content="CafBeat · Coffee Log & Caffeine Tracker">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function () {
+  var L = {"zh-Hans": "咖律 · 咖啡记录与咖啡因追踪", "zh-Hant": "咖律 · 咖啡記錄與咖啡因追蹤", "en": "CafBeat · Coffee Log & Caffeine Tracker", "ja": "CafBeat · コーヒー記録とカフェイン管理", "ko": "CafBeat · 커피 기록과 카페인 관리", "th": "CafBeat · บันทึกกาแฟและติดตามคาเฟอีน"}, d = document.documentElement;
+  function pick(c) {
+    if (!c) return null;
+    c = String(c).toLowerCase().replace(/_/g, "-");
+    if (/^zh-(hant|tw|hk|mo)/.test(c)) return "zh-Hant";
+    if (/^zh/.test(c)) return "zh-Hans";
+    var p = c.split("-")[0];
+    return ["en", "ja", "ko", "th"].indexOf(p) >= 0 ? p : null;
+  }
+  var q = null;
+  try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+  var lang = pick(q);
+  if (!lang) {
+    var list = navigator.languages || [navigator.language];
+    for (var i = 0; i < list.length && !lang; i++) lang = pick(list[i]);
+  }
+  lang = lang || "en";
+  d.setAttribute("data-lang", lang);
+  d.lang = lang;
+  document.title = L[lang];
+})();
+</script>
+<style>
+html[data-lang] section[data-lang]{display:none}
+html[data-lang="zh-Hans"] section[data-lang="zh-Hans"]{display:block}
+html[data-lang="zh-Hant"] section[data-lang="zh-Hant"]{display:block}
+html[data-lang="en"] section[data-lang="en"]{display:block}
+html[data-lang="ja"] section[data-lang="ja"]{display:block}
+html[data-lang="ko"] section[data-lang="ko"]{display:block}
+html[data-lang="th"] section[data-lang="th"]{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section data-lang="zh-Hans" lang="zh-Hans">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" aria-current="page" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" hreflang="en">English</a>
+    <a href="?lang=ja" hreflang="ja">日本語</a>
+    <a href="?lang=ko" hreflang="ko">한국어</a>
+    <a href="?lang=th" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="assets/icon.png" alt="">
+  <h1>咖律</h1>
+  <p>拍下杯贴，喝咖啡也有自己的节奏</p>
+  <p class="meta">CafBeat · iPhone</p>
+</div>
+<ul class="features">
+  <li>拍一下杯贴或订单截图，自动识别品牌、饮品、规格和时间</li>
+  <li>本机离线识别，记录只存在你的手机和 iCloud</li>
+  <li>估算热量和咖啡因，画出体内咖啡因曲线</li>
+  <li>月报、年报和热敏小票风格的分享图</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=zh-Hans">隐私政策<span>我们如何处理你的信息</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=zh-Hans">用户协议<span>使用条款与 Pro 订阅说明</span></a>
+  <a href="mailto:wrzxnx@gmail.com">联系我们<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=zh-Hans">咖律</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=zh-Hans">用户协议</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=zh-Hans">隐私政策</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+<section data-lang="zh-Hant" lang="zh-Hant">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" aria-current="page" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" hreflang="en">English</a>
+    <a href="?lang=ja" hreflang="ja">日本語</a>
+    <a href="?lang=ko" hreflang="ko">한국어</a>
+    <a href="?lang=th" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="../assets/icon.png" alt="">
+  <h1>咖律</h1>
+  <p>拍下杯貼，喝咖啡也有自己的節奏</p>
+  <p class="meta">CafBeat · iPhone</p>
+</div>
+<ul class="features">
+  <li>拍一下杯貼或訂單截圖，自動識別品牌、飲品、規格和時間</li>
+  <li>本機離線識別，記錄只存在你的手機和 iCloud</li>
+  <li>估算熱量和咖啡因，畫出體內咖啡因曲線</li>
+  <li>月報、年報和熱感小票風格的分享圖</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=zh-Hant">隱私政策<span>我們如何處理你的資訊</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=zh-Hant">使用者協議<span>使用條款與 Pro 訂閱說明</span></a>
+  <a href="mailto:wrzxnx@gmail.com">聯絡我們<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=zh-Hant">咖律</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=zh-Hant">使用者協議</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=zh-Hant">隱私政策</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+<section data-lang="en" lang="en">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" aria-current="page" hreflang="en">English</a>
+    <a href="?lang=ja" hreflang="ja">日本語</a>
+    <a href="?lang=ko" hreflang="ko">한국어</a>
+    <a href="?lang=th" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="../assets/icon.png" alt="">
+  <h1>CafBeat</h1>
+  <p>Snap the cup label. Find your coffee rhythm.</p>
+  <p class="meta">咖律 · iPhone</p>
+</div>
+<ul class="features">
+  <li>Snap a cup label or order screenshot to log brand, drink, size and time</li>
+  <li>Recognition runs offline on your iPhone; records stay on your device and iCloud</li>
+  <li>Calorie and caffeine estimates with a live caffeine curve</li>
+  <li>Monthly and yearly reports plus thermal-receipt share cards</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=en">Privacy Policy<span>How we handle your information</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=en">Terms of Use<span>Terms and CafBeat Pro subscription</span></a>
+  <a href="mailto:wrzxnx@gmail.com">Contact<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=en">CafBeat</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=en">Terms of Use</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=en">Privacy Policy</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+<section data-lang="ja" lang="ja">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" hreflang="en">English</a>
+    <a href="?lang=ja" aria-current="page" hreflang="ja">日本語</a>
+    <a href="?lang=ko" hreflang="ko">한국어</a>
+    <a href="?lang=th" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="assets/icon.png" alt="">
+  <h1>CafBeat</h1>
+  <p>カップラベルを撮るだけ。自分のコーヒーリズムを。</p>
+  <p class="meta">咖律 · iPhone</p>
+</div>
+<ul class="features">
+  <li>カップラベルや注文画面を撮るだけで、ブランド・ドリンク・サイズ・時刻を記録</li>
+  <li>認識は iPhone 上でオフライン。記録はデバイスと iCloud にだけ保存</li>
+  <li>カロリーとカフェインを推定し、体内カフェイン曲線を表示</li>
+  <li>月間・年間レポートとレシート風のシェア画像</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=ja">プライバシーポリシー<span>お客様の情報の取り扱いについて</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=ja">利用規約<span>規約と CafBeat Pro サブスクリプション</span></a>
+  <a href="mailto:wrzxnx@gmail.com">お問い合わせ<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=ja">CafBeat</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=ja">利用規約</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=ja">プライバシーポリシー</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+<section data-lang="ko" lang="ko">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" hreflang="en">English</a>
+    <a href="?lang=ja" hreflang="ja">日本語</a>
+    <a href="?lang=ko" aria-current="page" hreflang="ko">한국어</a>
+    <a href="?lang=th" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="assets/icon.png" alt="">
+  <h1>CafBeat</h1>
+  <p>컵 라벨을 찍기만 하면, 나만의 커피 리듬.</p>
+  <p class="meta">咖律 · iPhone</p>
+</div>
+<ul class="features">
+  <li>컵 라벨이나 주문 화면을 찍으면 브랜드, 음료, 사이즈, 시간을 기록</li>
+  <li>인식은 iPhone에서 오프라인으로, 기록은 기기와 iCloud에만 저장</li>
+  <li>칼로리와 카페인을 추정하고 체내 카페인 곡선 표시</li>
+  <li>월간·연간 리포트와 영수증 스타일 공유 이미지</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=ko">개인정보 처리방침<span>사용자의 정보를 처리하는 방법</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=ko">이용약관<span>약관 및 CafBeat Pro 구독 안내</span></a>
+  <a href="mailto:wrzxnx@gmail.com">문의<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=ko">CafBeat</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=ko">이용약관</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=ko">개인정보 처리방침</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+<section data-lang="th" lang="th">
+<header class="top">
+  <span></span>
+  <nav class="lang" aria-label="Language">
+    <a href="?lang=zh-Hans" hreflang="zh-Hans">简体</a>
+    <a href="?lang=zh-Hant" hreflang="zh-Hant">繁體</a>
+    <a href="?lang=en" hreflang="en">English</a>
+    <a href="?lang=ja" hreflang="ja">日本語</a>
+    <a href="?lang=ko" hreflang="ko">한국어</a>
+    <a href="?lang=th" aria-current="page" hreflang="th">ไทย</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <img src="assets/icon.png" alt="">
+  <h1>CafBeat</h1>
+  <p>แค่ถ่ายฉลากแก้ว ก็เจอจังหวะกาแฟของคุณ</p>
+  <p class="meta">咖律 · iPhone</p>
+</div>
+<ul class="features">
+  <li>ถ่ายฉลากแก้วหรือภาพหน้าจอคำสั่งซื้อ เพื่อบันทึกแบรนด์ เครื่องดื่ม ขนาด และเวลา</li>
+  <li>จดจำแบบออฟไลน์บน iPhone บันทึกอยู่บนอุปกรณ์และ iCloud ของคุณเท่านั้น</li>
+  <li>ประมาณแคลอรีและคาเฟอีน พร้อมกราฟคาเฟอีนในร่างกาย</li>
+  <li>รายงานรายเดือน รายปี และภาพแชร์สไตล์ใบเสร็จ</li>
+</ul>
+<div class="links">
+  <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=th">นโยบายความเป็นส่วนตัว<span>วิธีที่เราจัดการข้อมูลของคุณ</span></a>
+  <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=th">ข้อกำหนดการใช้งาน<span>ข้อกำหนดและการสมัครสมาชิก CafBeat Pro</span></a>
+  <a href="mailto:wrzxnx@gmail.com">ติดต่อเรา<span>wrzxnx@gmail.com</span></a>
+</div>
+</main>
+<footer>
+  <p><a href="https://wrzxnx.github.io/cafbeat/?lang=th">CafBeat</a> · <a href="https://wrzxnx.github.io/cafbeat-terms/?lang=th">ข้อกำหนดการใช้งาน</a> · <a href="https://wrzxnx.github.io/cafbeat-privacy/?lang=th">นโยบายความเป็นส่วนตัว</a> · <a href="mailto:wrzxnx@gmail.com">wrzxnx@gmail.com</a></p>
+  <p>© 2026 咖律 CafBeat</p>
+</footer>
+</section>
+</div>
+</body>
+</html>
